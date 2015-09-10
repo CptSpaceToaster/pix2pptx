@@ -23,7 +23,6 @@ slide_width = 720
 slide_height = 540
 
 if __name__ == '__main__':
-    print(args.dir)
     P = Presentation()
 
     if os.path.isdir(args.dir):
@@ -33,7 +32,11 @@ if __name__ == '__main__':
                 img = root + os.sep + img
 
                 # get image size in pixels
-                cat = Image.open(img)
+                try:
+                    cat = Image.open(img)
+                except OSError:
+                    # Probably not an image :(
+                    continue
                 img_width = cat.size[0]
                 img_height = cat.size[1]
 
