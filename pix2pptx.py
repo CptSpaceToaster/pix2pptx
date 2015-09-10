@@ -14,7 +14,7 @@ parser = argparse.ArgumentParser(description='pix2pptx - Convert a folder of ima
 mandatory = parser.add_argument_group('mandatory arguments')
 # TODO: List what type of image files are permitted
 mandatory.add_argument('dir', help='Directory location containing image files')
-parser.add_argument('-f', '--filename', default='pix.pptx',
+parser.add_argument('-f', '--filename', default='out.pptx',
                     help='Output filename (default="out.pptx")')
 args = parser.parse_args()
 
